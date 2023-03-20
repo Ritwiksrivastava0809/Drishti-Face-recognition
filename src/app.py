@@ -1,8 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Firday Jun 14 2019
-@author: Jiwitesh Kumar
-"""
+
 import argparse
 import logging
 import tkinter as tk
@@ -97,13 +93,6 @@ class RegistrationModule:
                            font=('times', 15))
         self.message.place(x=205, y=260)
 
-        # lbl3 = tk.Label(self.window, text="Attendance : ", width=15, fg="white", bg="#363e75", height=2,
-        #                 font=('times', 15))
-        # lbl3.place(x=80, y=440)
-        #
-        # self.message2 = tk.Label(self.window, text="", fg="#e47911", bg="#bbc7d4", activeforeground="#f8f9fa", width=52, height=2,
-        #                     font=('times', 15))
-        # self.message2.place(x=250, y=440)
 
         takeImg = tk.Button(self.window, text="Take Images", command=self.collectUserImageForRegistration, fg="white", bg="#363e75", width=15,
                             height=2,
@@ -132,43 +121,6 @@ class RegistrationModule:
         logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', filename=self.logFileName,
                             level=logging.INFO,
                             datefmt='%Y-%m-%d %H:%M:%S')
-
-    def getRandomNumber(self):
-        ability = str(random.randint(1, 10))
-        self.updateDisplay(ability)
-
-    def updateDisplay(self, myString):
-        self.displayVariable.set(myString)
-
-    def manipulateFont(self, fontSize=None, *args):
-        newFont = (font.get(), fontSize.get())
-        return newFont
-
-    def clear(self):
-        txt.delete(0, 'end')
-        res = ""
-        self.message.configure(text=res)
-
-    def clear2(self, txt2=None):
-        txt2.delete(0, 'end')
-        res = ""
-        self.message.configure(text=res)
-
-    def is_number(self, s):
-        try:
-            float(s)
-            return True
-        except ValueError:
-            pass
-
-        try:
-            import unicodedata
-            unicodedata.numeric(s)
-            return True
-        except (TypeError, ValueError):
-            pass
-
-        return False
 
     def collectUserImageForRegistration(self):
         clientIDVal = (self.clientIDTxt.get())
@@ -245,5 +197,3 @@ class RegistrationModule:
 
 logFileName = "ProceduralLog.txt"
 regStrtnModule = RegistrationModule(logFileName)
-# regStrtnModule = RegistrationModule
-# regStrtnModule.TrainImages()
