@@ -26,7 +26,6 @@ class FacePredictor():
             self.model = "./insightface/models/model-y1-test2/model,0"
             self.threshold = 1.24
             self.det = 0
-            self.model_filename = '../src/com_in_ineuron_ai_sorting/model_data/mars-small128.pb'
 
             # # Initialize detector
             self.detector = MTCNN()
