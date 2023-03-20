@@ -31,8 +31,8 @@ class ConfigurationsPOJO:
     # For DB Operations
     url = "mongodb://localhost:27017/"
     dbName = "userDetails"
-    collectionName = "userAttendance"
-    collectionNameForUnknwnUser = "userAttendanceForUnknwnUsr"
+    collectionName = "Police_criminal"
+    collectionNameForUnknwnUser = "criminal recognition"
 
     # for Classifier Model path
     clssfr_ModelPath = 'faceEmbeddingModels/my_model.h5'
