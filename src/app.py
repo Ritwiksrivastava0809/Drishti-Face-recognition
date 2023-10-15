@@ -122,24 +122,7 @@ class RegistrationModule:
                             level=logging.INFO,
                             datefmt='%Y-%m-%d %H:%M:%S')
 
-    def collectUserImageForRegistration(self):
-        clientIDVal = (self.clientIDTxt.get())
-        empIDVal = self.empIDTxt.get()
-        name = (self.empNameTxt.get())
-        ap = argparse.ArgumentParser()
 
-        ap.add_argument("--faces", default=50,
-                        help="Number of faces that camera will get")
-        ap.add_argument("--output", default="../datasets/train/" + name,
-                        help="Path to faces output")
-
-        args = vars(ap.parse_args())
-
-        trnngDataCollctrObj = TrainingDataCollector(args)
-        trnngDataCollctrObj.collectImagesFromCamera()
-
-        notifctn = "We have collected " + str(args["faces"]) + " images for training."
-        self.message.configure(text=notifctn)
 
     def getFaceEmbedding(self):
 
